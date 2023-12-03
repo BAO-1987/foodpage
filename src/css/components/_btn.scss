@@ -1,0 +1,85 @@
+@use "../utils/functions" as *;
+@use "../utils/mixins" as *;
+
+.btn {
+  @include flex-all-center;
+
+  border-radius: var(--radius-main);
+  padding: em(10) em(29);
+  max-width: fit-content;
+  font-size: clamp(1rem, 0.975rem + 0.125vw, 1.125rem);
+  letter-spacing: 0.03em;
+  text-transform: capitalize;
+  color: var(--color-white);
+  background-color: var(--color-orange-900);
+  transition-property: color, background-color, box-shadow;
+  transition-duration: 0.3s;
+  transition-timing-function: linear;
+
+  &:is(:hover, :active) {
+    color: var(--color-orange-900);
+  }
+
+  &:focus-visible {
+    outline-offset: 0;
+    background-color: rgba(255, 104, 56, 0.1);
+  }
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow:
+      0 0 0 2px rgba(255, 104, 56, 0.7),
+      0 5px 12px 0 rgba(255, 104, 56, 0.2);
+  }
+
+  &:active {
+    background-color: rgba(255, 104, 56, 0.1);
+  }
+}
+
+.slider-btn {
+  @include flex-all-center;
+
+  position: relative;
+  border: 3px solid var(--color-gray);
+  border-radius: 100vw;
+  width: 40px;
+  height: 40px;
+  background-color: var(--color-white);
+  transition: border-color 0.3s linear;
+
+  &::before {
+    @include mask;
+
+    mask-image: url("../images/icons/small-arrow.svg");
+    width: 11px;
+    height: 19px;
+    background-color: var(--color-gray);
+  }
+
+  &:hover {
+    border-color: var(--color-orange-900);
+    background-color: var(--color-orange-100);
+
+    &::before {
+      background-color: var(--color-orange-900);
+    }
+  }
+
+  &:active {
+    &::before {
+      background-color: var(--color-orange-900);
+    }
+  }
+
+  &:disabled {
+    opacity: 0.9;
+    pointer-events: none;
+  }
+
+  &--reverse {
+    &::before {
+      transform: scaleX(-1);
+    }
+  }
+}

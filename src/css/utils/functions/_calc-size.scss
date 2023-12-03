@@ -1,0 +1,20 @@
+$browser-context: 16; // Default
+$percent: 100%;
+$myFullHD: 1920;
+$myVW: 19.2;
+
+@function rem($pixels, $context: $browser-context) {
+  @return #{calc($pixels / $context)}rem;
+}
+
+@function em($pixels, $context: $browser-context) {
+  @return #{calc($pixels / $context)}em;
+}
+
+@function vw($pixels, $context: $myVW) {
+  @return #{calc($pixels / $context)}vw;
+}
+
+@function width($num, $ful: $myFullHD) {
+  @return #{calc($num * $percent / $ful)};
+}

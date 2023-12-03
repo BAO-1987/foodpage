@@ -1,0 +1,100 @@
+@use "../../utils/functions"as *;
+@use "../../utils/mixins"as *;
+
+.reviews-slider {
+  position: relative;
+  overflow: hidden;
+
+  &__list {
+    margin-bottom: clamp(2.5rem, calc(1rem + vw(44)), 3.75rem);
+    width: 100%;
+    max-width: 950px;
+  }
+
+  &__item {
+    @include flex-all-center;
+
+    height: auto;
+    gap: 30px;
+
+    @include media(mobile-m) {
+      flex-direction: column;
+    }
+  }
+
+  &__image {
+    img {
+      border-radius: 100vw;
+    }
+  }
+
+  &__blockquote {
+    @include flex;
+
+    flex-direction: column;
+    min-height: 240px;
+    font-style: italic;
+    font-size: clamp(1rem, 0.95rem + 0.25vw, 1.25rem);
+    color: var(--color-dark);
+  }
+
+  p {
+    position: relative;
+    padding: 0 clamp(2rem, calc(1rem + vw(24)), 2.5rem);
+    max-width: 650px;
+
+    &::before,
+    &::after {
+      @include mask;
+
+      left: 0;
+      mask-image: url("../images/icons/quotes.svg");
+      width: 24px;
+      height: 20px;
+      background-color: var(--color-gray);
+    }
+
+    &::after {
+      left: auto;
+      right: 0;
+      transform: scaleX(-1);
+    }
+  }
+
+  &__author {
+    @include flex;
+
+    flex-direction: column;
+    margin-top: auto;
+    padding-left: clamp(2rem, calc(1rem + vw(24)), 2.5rem);
+    font-style: normal;
+    color: var(--color-orange-900);
+    gap: 15px;
+
+    span {
+      display: block;
+      font-size: 14px;
+      color: var(--color-dark);
+    }
+
+    @include media (mobile-m) {
+      text-align: center;
+    }
+  }
+
+  &__pagination {
+    position: relative;
+    padding: 0 25px;
+    width: fit-content !important;
+
+    &.swiper-pagination-bullets {
+      bottom: 0;
+    }
+  }
+
+  &__nav {
+    @include flex-all-center;
+
+    position: relative;
+  }
+}

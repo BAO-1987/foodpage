@@ -1,0 +1,90 @@
+@use "../utils/functions"as *;
+@use "../utils/mixins"as *;
+
+.tabs {
+  &__nav {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    margin-bottom: clamp(1.875rem, calc(1rem + vw(29)), 2.9rem);
+    gap: 20px;
+
+    @include media(tablet) {
+      overflow-x: scroll;
+      padding: 10px 5px 15px;
+    }
+  }
+
+  &__link {
+    @include flex-all-center;
+
+    position: relative;
+    border-radius: var(--radius-main);
+    padding: em(16) em(26) em(16) 86px;
+    box-shadow: 0 0 0 1px var(--color-silver-200);
+    font-size: clamp(0.875rem, 0.784rem + 0.3883vw, 1.25rem);
+    white-space: nowrap;
+    background-color: var(--color-white);
+    transition:
+      box-shadow 0.5s linear,
+      background-color 0.5s linear,
+      color 0.5s linear;
+
+    &::before {
+      @include mask-icon;
+
+      left: 32px;
+      mask-image: url("../images/icons/burger.svg");
+    }
+
+    &:hover {
+      box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.7);
+      color: var(--color-orange-900);
+      background-color: rgba(255, 104, 56, 0.1);
+    }
+
+    &[aria-selected="true"] {
+      color: var(--color-white);
+      background-color: var(--color-orange-900);
+    }
+
+    &--burgers {
+      &::before {
+        mask-image: url("../images/icons/burger.svg");
+      }
+    }
+
+    &--pizza {
+      &::before {
+        mask-image: url("../images/icons/pizza.svg");
+      }
+    }
+
+    &--sandwich {
+      &::before {
+        mask-image: url("../images/icons/sandwich.svg");
+      }
+    }
+
+    &--asian {
+      &::before {
+        mask-image: url("../images/icons/dinner.svg");
+      }
+    }
+
+    &--set {
+      &::before {
+        mask-image: url("../images/icons/dish.svg");
+      }
+    }
+  }
+
+  &__panels {
+    margin-bottom: 60px;
+  }
+
+  &__content {
+    animation:
+      slide-up 0.9s forwards,
+      fade-in 0.9s forwards;
+  }
+}

@@ -1,0 +1,42 @@
+@use "../utils/functions/"as*;
+@use "../utils/mixins"as*;
+
+.header {
+  position: fixed;
+  top: 0;
+  z-index: 105;
+  padding: clamp(1.56rem, calc(1rem + vw(44)), 3.7rem) 0;
+  width: 100%;
+  transition: transform 0.15s,
+    background-color 0.15s;
+
+  &__inner {
+    @include flex-all-sb;
+  }
+
+  &.hide {
+    transform: translateY(-110%);
+
+    &.opened {
+      transform: translateY(0);
+    }
+  }
+
+  &.scrolling {
+    padding: 15px 0;
+    box-shadow: 0 0 12px 0 rgba(255, 104, 56, 0.20);
+    background-color: var(--color-white);
+  }
+
+  &.opened {
+    background-color: var(--color-white);
+  }
+
+  @include media (mobile-l) {
+    .logo {
+      margin-right: 10px;
+      max-width: 140px;
+    }
+  }
+
+}

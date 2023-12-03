@@ -1,0 +1,55 @@
+@use "../utils/functions"as *;
+@use "../utils/mixins"as *;
+
+.address {
+  &__list {
+    @include flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__link {
+    @include flex-v-center;
+
+    position: relative;
+    padding-left: 30px;
+    line-height: 2;
+    transition: color 0.3s linear;
+
+    &::before {
+      @include mask-icon;
+
+      left: 0;
+      width: 24px;
+      height: 24px;
+    }
+
+    &:hover {
+      color: var(--color-orange-900);
+    }
+
+    &--pin {
+      &::before {
+        mask-image: url("../images/icons/pin.svg");
+      }
+    }
+
+    &--phone {
+      &::before {
+        mask-image: url("../images/icons/phone.svg");
+      }
+    }
+
+    &--mail {
+      &::before {
+        mask-image: url("../images/icons/message.svg");
+      }
+    }
+  }
+}

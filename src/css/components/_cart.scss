@@ -1,0 +1,51 @@
+@use "../utils/functions/"as*;
+@use "../utils/mixins/"as*;
+
+.cart {
+  @include flex-all-center;
+
+  position: relative;
+  border-radius: var(--radius-main);
+  padding: 11px;
+  transition: background-color 0.3s linear;
+  cursor: pointer;
+
+  &__btn {
+    color: var(--color-dark-900);
+    transition: color 0.3s linear;
+  }
+
+  &__count {
+    @include flex-all-center;
+
+    position: absolute;
+    right: 7px;
+    top: 7px;
+    border-radius: 100vw;
+    padding: 0 4px;
+    font-size: 0.625rem;
+    line-height: 1.4;
+    color: var(--color-white);
+    background-color: var(--color-orange-900);
+    transition: background-color 0.3s linear,
+      color 0.3s linear;
+
+    &:hover {
+      color: var(--color-orange-900);
+      background-color: var(--color-white);
+    }
+  }
+
+  &:hover {
+    background-color: var(--color-orange-900);
+
+    .cart__btn {
+      color: var(--color-white);
+    }
+
+    .cart__count {
+      color: var(--color-orange-900);
+      background-color: var(--color-white);
+    }
+  }
+}

@@ -1,0 +1,146 @@
+<header class="header">
+
+  <div class="header__inner container">
+
+    <a class="logo" href="#">
+      <img class="logo__img" src="./images/logo.svg" alt="Логотип SimpleFood" width="200" height="40" loading="lazy">
+    </a>
+
+    <nav class="nav">
+
+      <ul class="nav__list">
+
+        <li class="nav__item">
+          <a class="nav__link" href="#">
+            головна
+          </a>
+        </li>
+
+        <li class="nav__item">
+          <a class="nav__link" href="#">
+            страви
+          </a>
+        </li>
+
+        <li class="nav__item">
+          <a class="nav__link" href="#">
+            контакти
+          </a>
+        </li>
+
+        <address class="address">
+
+          <ul class="address__list">
+
+            <li class="address__item">
+              <a class="address__link address__link--pin" href="#">
+                вул. Т.Г.Шевченка, 1
+              </a>
+            </li>
+
+            <li class="address__item">
+              <a class="address__link address__link--phone" href="tel:+380501112233">
+                +380501112233
+              </a>
+            </li>
+
+            <li class="address__item">
+              <a class="address__link address__link--mail" href="mailto:support@sfood.com">
+                support@sfood.com
+              </a>
+            </li>
+
+          </ul>
+
+          <ul class="social__list">
+
+            <li class="social__item">
+              <a href="#" class="social__link social__link--fb" aria-label="посилання на нашу сторінку facebook"></a>
+            </li>
+
+            <li class="social__item">
+              <a href="#" class="social__link social__link--tw" aria-label="посилання на нашу сторінку twitter"></a>
+            </li>
+
+            <li class="social__item">
+              <a href="#" class="social__link social__link--in" aria-label="посилання на нашу сторінку instagram"></a>
+            </li>
+
+          </ul>
+
+        </address>
+
+      </ul>
+
+      <div class="nav__action">
+
+        <div class="search">
+
+          <button class="search__btn" type="button" aria-label="кнопка виклику пошуку">
+            <svg class="icons" arial-hidden="true">
+              <use xlink:href="./icons/search.svg"></use>
+            </svg>
+          </button>
+
+          <div class="search__form">
+
+            <form class="form form--search" action="#" aria-label="форма пошуку">
+              <div class="form__box">
+
+                <button class="form__close" type="button" aria-label="кнопка закриття пошуку">
+                  <svg class="icons icons--close" arial-hidden="true">
+                    <use xlink:href="./icons/close.svg"></use>
+                  </svg>
+                </button>
+
+                <label class="sr-only" for="search">
+                </label>
+
+                <input class="form__input" type="search" id="search" placeholder="Пошук" required>
+
+                <button class="form__search" type="submit" aria-label="кнопка пошуку">
+                  <svg class="icons" arial-hidden="true">
+                    <use xlink:href="./icons/search.svg"></use>
+                  </svg>
+                </button>
+
+              </div>
+
+            </form>
+
+          </div>
+
+        </div>
+
+
+        <div class="cart">
+          <button class="cart__btn" type="button" aria-label="перейти в корзину">
+            <svg class="icons" arial-hidden="true">
+              <use xlink:href="./icons/cart.svg"></use>
+            </svg>
+          </button>
+          <span class="cart__count">4</span>
+        </div>
+
+      </div>
+
+    </nav>
+
+    <button class="burger" aria-label="відкрити мобільне меню" aria-expanded="false" type="button">
+      <svg stroke="var(--button-color)" class="burger__body" viewBox="0 0 100 100" width="24" height="24">
+
+        <line class="line top" x1="90" x2="10" y1="35" y2="35" stroke-width="10" stroke-linecap="round"
+          stroke-dasharray="80" stroke-dashoffset="0">
+        </line>
+        <line class="line middle" x1="90" x2="10" y1="55" y2="55" stroke-width="10" stroke-linecap="round"
+          stroke-dasharray="80" stroke-dashoffset="0">
+        </line>
+
+        <line class="line bottom" x1="10" x2="90" y1="75" y2="75" stroke-width="10" stroke-linecap="round"
+          stroke-dasharray="80" stroke-dashoffset="0">
+        </line>
+      </svg>
+    </button>
+
+  </div>
+</header>

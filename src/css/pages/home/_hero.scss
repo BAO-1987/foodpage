@@ -1,0 +1,50 @@
+@use "../../utils/functions"as *;
+@use "../../utils/mixins"as *;
+
+.hero {
+  &__content {
+    z-index: 1;
+    width: 100%;
+    max-width: 476px;
+
+    @include media(tablet) {
+      max-width: 100%;
+    }
+  }
+
+  &__desc {
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 450px;
+
+    @include media(tablet) {
+      max-width: 100%;
+    }
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    font-size: clamp(2.5rem, 2.175rem + 1.625vw, 4.125rem);
+    text-align: left;
+    text-transform: uppercase;
+
+    span {
+      display: inline-block;
+      color: var(--color-orange-900);
+    }
+  }
+
+  &__btns {
+    @include flex-v-center;
+
+    gap: 25px;
+  }
+
+  &__image {
+    justify-self: end;
+
+    @include media(tablet) {
+      opacity: 0.2;
+    }
+  }
+}
